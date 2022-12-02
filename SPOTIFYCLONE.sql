@@ -17,9 +17,7 @@ CREATE TABLE SpotifyClone.usuario(
 usuario_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 usuario VARCHAR(255),
 idade INT,
-data_assinatura DATE,
-plano_id INT,
-FOREIGN KEY (plano_id) REFERENCES plano(plano_id)
+data_assinatura DATE
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.seguindo_artistas(
@@ -69,17 +67,17 @@ INSERT INTO SpotifyClone.artista (artista) VALUES
 ('Blind Guardian'),
 ('Nina Simone');
 
-INSERT INTO SpotifyClone.usuario (usuario, idade, data_assinatura, plano_id) VALUES
-('Barbara Liskov', 82, '2019-10-20', 1),
-('Robert Cecil Martin', 58, '2017-01-06', 1),
-('Ada Lovelace', 37, '2017-12-30', 2),
-('Martin Fowler', 46, '2017-01-17', 2),
-('Sandi Metz', 58, '2018-04-29',2),
-('Paulo Freire', 19,	'2018-02-14',3),
-('Bell Hooks', 26, '2018-01-05',3),
-('Christopher Alexander', 85, '2019-06-05',4),
-('Judith Butler', 45, '2020-05-13',4),
-('Jorge Amado', 58, '2017-02-17',4);
+INSERT INTO SpotifyClone.usuario (usuario, idade, data_assinatura) VALUES
+('Barbara Liskov', 82, '2019-10-20'),
+('Robert Cecil Martin', 58, '2017-01-06'),
+('Ada Lovelace', 37, '2017-12-30'),
+('Martin Fowler', 46, '2017-01-17'),
+('Sandi Metz', 58, '2018-04-29'),
+('Paulo Freire', 19,	'2018-02-14'),
+('Bell Hooks', 26, '2018-01-05'),
+('Christopher Alexander', 85, '2019-06-05'),
+('Judith Butler', 45, '2020-05-13'),
+('Jorge Amado', 58, '2017-02-17');
 
 INSERT INTO SpotifyClone.seguindo_artistas (usuario, seguindo_artistas) VALUES
 (1,	1),
@@ -92,7 +90,6 @@ INSERT INTO SpotifyClone.seguindo_artistas (usuario, seguindo_artistas) VALUES
 (5,	5),
 (5,	6),
 (6,	1),
-(6, 6),
 (7,	6),
 (9,	3),
 (10, 2);
@@ -119,20 +116,22 @@ INSERT INTO SpotifyClone.cancoes (cancoes, duracao_segundos, albuns) VALUES
 ("The Bard’s Song", 244, 7),
 ("Feeling Good", 100, 8);
 
-INSERT INTO SpotifyClone.historico_de_reproducoes (usuarios, historico_de_reproducoes, data_reproducao) VALUES
+INSERT INTO SpotifyClone.historico_reproducoes (usuarios, historico_de_reproducoes, data_reproducao) VALUES
 (1,	8, "2022-02-28 10:45:55"),
 (1,	2, "2020-05-02 05:30:35"),
-(1,	10, "2020-03-06 11:22:33"),
-(2,	10, "2022-08-05 08:05:17"),
-(2,	7, "2020-01-02 07:40:33"),
-(3,	10, "2020-11-13 16:55:13"),
-(3,	2, "2020-12-05 18:38:30"),
-(4,	8, "2021-08-15 17:10:10"),
-(5,	8, "2022-01-09 01:44:33"),
-(5,	5, "2020-08-06 15:23:43"),
-(6,	7, "2017-01-24 00:31:17"),
-(6,	1, "2017-10-12 12:35:20"),
-(7,	4, "2011-12-15 22:30:49"),
-(8,	4, "2012-03-17 14:56:41"),
-(9,	9, "2022-02-24 21:14:22"),
-(10, 3, "2015-12-13 08:30:22");
+(1,	10,	"2020-03-06 11:22:33"),
+(2,	10,	"2022-08-05 08:05:17"),
+(2,	7,	"2020-01-02 07:40:33"),
+(3,	10,	"2020-11-13 16:55:13"),
+(3,	2,	"2020-12-05 18:38:30"),
+(4,	8,	"2021-08-15 17:10:10"),
+(5,	8,	"2022-01-09 01:44:33"),
+(5,	5,	 "2020-08-06 15:23:43"),
+(6,	7,	"2017-01-24 00:31:17"),
+(6,	1,	 "2017-10-12 12:35:20"),
+(7,	4,	"2011-12-15 22:30:49"),
+(8,	4,	"2012-03-17 14:56:41"),
+(9,	9,	"2022-02-24 21:14:22"),
+(10, 3,	"2015-12-13 08:30:22");
+
+
