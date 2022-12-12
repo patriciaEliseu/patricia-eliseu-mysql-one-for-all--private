@@ -62,7 +62,7 @@ INSERT INTO SpotifyClone.plano (plano, valor_plano) VALUES
 ('pessoal', 6.99);
 
 INSERT INTO SpotifyClone.artista (artista) VALUES
-('Beyonce'),
+('Beyoncé'),
 ('Queen'),
 ('Elis Regina'),
 ('Baco Exu do Blues'),
